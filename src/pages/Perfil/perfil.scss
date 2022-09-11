@@ -1,0 +1,332 @@
+@import './../../styles/utils/mixins';
+@import './../../styles/utils/variables';
+
+.back-button{
+    img {
+        width: 15%;
+    }
+    @include respond-to('medium'){
+        margin: 30px 0 0 26px;
+        img{
+            width: 80px;
+        }
+    }
+}
+//HIDE CONTENT INACTIVE IN TAB
+.inactive {
+    display: none
+}
+.email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    input{
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+        background: transparent;
+        width: 75vw;
+        padding: 13px 9px;
+        color: rgba(0, 0, 0, 0.55);
+        &:focus{
+            outline: none;
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 1);
+        }
+        @include respond-to('medium'){
+            width: 25vw;
+        }
+        font: {
+            size: 19px;
+            family: $font2;
+        }
+
+    }
+    img{
+        width: 12%;
+        @include respond-to('medium'){
+            width: 15%;
+            margin-right: 6rem;
+        }
+    }
+}
+.logout{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #000;
+    padding-bottom: 20px;
+    font: {
+        family: $font;
+        size: 30px;
+    }
+    img{
+        margin-right: 15px;
+    }
+}
+.profile-content{
+    display: flex;
+    // margin-top: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+    @include respond-to('medium'){
+        min-height: 72vh;
+    }
+    
+
+    &__header{
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        h2{margin: 0}
+        &-button {
+            background: #D9ECFD;
+            border-radius: 50px;
+            padding: 3px 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 1px;
+            color: #000;
+            font: {
+                family: $font;
+                weight: bold;
+                size: 17px
+            }
+            img{
+                width: 30px;
+                margin-left: 10px;
+            }
+        }
+        &.edit-header{
+            // border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+            // color: rgba(0, 0, 0, 0.55);
+            input,
+            textarea {
+                border: none;
+                color: rgba(0, 0, 0, 0.55);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+                width: 98%;
+                margin-bottom: 20px;
+               font: {
+                   size: 40px;
+                   family: $font2;
+                   weight: normal;
+               }
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    border-bottom: 1px solid rgba(0, 0, 0, 1);
+                }
+            }
+            textarea{
+                min-height: 100px;
+                overflow-y: auto;
+                 resize: none;
+                 text-align: left;
+                 font: {
+                     size: 21px;
+                     family: $font2;
+                     weight: normal;
+                 }
+                 &::-webkit-scrollbar {
+                     width: 0;
+                     background: transparent
+                 }
+
+                 &::-webkit-scrollbar-track {
+                     background: #f0f0f0
+                 }
+
+                 &::-webkit-scrollbar-thumb {
+                     background: rgba(0, 0, 0, 0.28);
+                 }
+
+                 @include respond-to('medium') {
+
+                     overflow-y: scroll;
+                 }
+            }
+        }
+    }
+    &__body{
+        &-bio{
+            margin-top: 2rem;
+            color: #000;
+            font: {
+                size: 21px;
+                family: $font2;
+                weight: normal;
+            }
+            @include respond-to('extra-large'){
+                font-size: 26px;
+            }
+            &.edit{
+                border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+                color: rgba(0, 0, 0, 0.55);
+            }
+        }
+    }
+
+    &__afiliados-width{
+        margin-bottom: 3rem;
+        @include respond-to('large') {
+            width: 55vw;
+        }
+    }
+    &__afiliados-full-width{
+        margin-bottom: 3rem;
+        @include respond-to('large') {
+            width: 100vw;
+        }
+    }
+} 
+
+.content-profile{
+    min-height: 80vh;
+    &__ellipse {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        background: rgba(247, 250, 111, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        position: relative;
+
+        @include respond-to('medium') {
+            margin: 0;
+        }
+
+        &-image {
+            width: 65%;
+        }
+        &-ribbon{
+            width: 32%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    &__animal-description{
+        position: relative;
+        grid-area: info;
+        display: grid;
+        max-height: 75vh;
+        grid-template-columns: 1fr;
+        row-gap: 0;
+        &::-webkit-scrollbar{
+            width: 3px;
+        } 
+        &::-webkit-scrollbar-track{
+            background: #f0f0f0
+        } 
+        &::-webkit-scrollbar-thumb{
+           background: rgba(0, 0, 0, 0.28);
+        } 
+        @include respond-to('medium') {
+
+             overflow-y: scroll;
+        }
+        &-card{
+            background: rgba(214, 244, 252, 0.27);
+            width: 95%;
+            min-height: 272px;
+            height: auto;
+            position: relative;
+            margin: 30px auto;
+            border-radius: 5px;
+            padding: 20px;
+            cursor: pointer;
+            @include respond-to('medium'){
+                padding: 20px 15px 30px 30px;
+                margin: 30px 0;
+                height: 385px;
+            }
+            @include respond-to('large'){
+                height: 272px;
+
+            }
+            &-star{
+                position: absolute;
+                top: -12px;
+                 right: -19px;
+                width: 65px;
+                @include respond-to('medium'){
+                    right: -30px;
+                }
+            }
+            &-body{
+                display: grid;
+                grid-template-columns: 1fr;
+                @include respond-to('medium'){
+                    grid-template-columns: 37% 70%;
+                }
+                @include respond-to('large'){
+                    grid-template-columns: 30% 65%;
+                }
+                @include respond-to('extra-large'){
+                    grid-template-columns: 25% 70%;
+                }
+            }
+            &-title, &-subtitle, &-text {
+                max-width: 300px;
+                color: #000;
+                text-align: center;
+                margin: auto;
+                font: {
+                    size: 30px;
+                    family: $font2;
+                    weight: normal;
+                }
+                @include respond-to('medium'){
+                    text-align: left;
+                }
+                @include respond-to('large'){
+                    max-width: 100%;
+                }
+            }
+            &-subtitle{
+                font-size: 18px;
+            }
+            &-text{
+                width: 98%; 
+                margin-top: 1rem;
+                font-size: 20px;
+            }
+        }
+    }
+    
+    &__donator{
+        text-align: center;
+        grid-area: donator;
+        margin: 20px 0 5rem 0;
+        @include respond-to('medium'){
+            margin: 0
+        }
+        &-flex{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &-ellipse {
+           width: 134px;
+           height: 134px;
+        }
+        &-name{
+            margin-left: 10px;
+            font: {
+                size: 40px;
+                family: $font2;
+                weight: normal;
+            }
+        }
+
+    }
+
+}

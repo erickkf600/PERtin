@@ -1,0 +1,63 @@
+@import './../../styles/utils/mixins';
+@import './../../styles/utils/variables';
+
+.profile{
+    width: 84px;
+    height: 84px;
+    border-radius: 100%;
+    background: rgba(247, 250, 111, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+
+    @include respond-to('medium') {
+        margin: 0;
+    }
+
+    &-image {
+        width: 65%;
+    }
+    &-ribbon{
+        width: 32%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+.posts{
+    max-width: 730px;
+    margin: auto;
+    &__head{
+        display: flex;
+        align-items: center;
+        margin: 30px 0 15px 0;
+
+        &-name {
+            color: #000;
+            margin-left: 20px;
+            font: {
+                size: 25px;
+                family: $font2;
+            }
+        }
+    }
+    &__body{
+        width: 97%;
+        height: 165px;
+        background: rgba(196, 196, 196, 0.58);
+        @include respond-to('medium'){
+            height: 313px;
+        }
+    }
+    &__footer-text{
+        margin: 0 0 40px 0;
+        color: rgba(0, 0, 0, 0.55);
+        letter-spacing: 1.1px;
+        font: {
+            size: 25px;
+            family: $font4;
+        }
+    }
+}

@@ -1,0 +1,106 @@
+.divider {
+    height: 112px;
+    background: rgba(253, 255, 151, 0.5);
+    min-width: calc(100vw - 17px);
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-star{
+        width: 33px;
+        margin-left: 0;
+        @include respond-to('medium'){
+            width: 45px;
+            margin-left: 15px;
+        }
+    }
+    &-afiliados{
+        font: {
+            family: $font3;
+            size: 30px;
+        }
+        @include respond-to('medium'){
+            font-size: 40px
+        }
+    }
+    button{
+        display: flex;
+        align-items: center;
+        transition: .3s;
+        &:hover{
+            color: rgba(0, 0, 0, 0.60);
+        }
+    }
+    .width{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include respond-to('large'){
+            width: 55vw;
+        }   
+    }
+}
+
+.inactive {
+    display: none
+}
+
+
+.image-radio{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 30px auto 0 auto;
+    justify-content: center;
+    position: relative;
+    @include respond-to('medium'){
+        grid-template-columns: 25% 36%;
+    }
+    @include respond-to('large'){
+        grid-template-columns: 21% 36%;
+    }
+    @include respond-to('extra-large'){
+        grid-template-columns: 16% 36%;
+    }
+    &.edit-page{
+        margin: 0 auto 0 auto;
+    }
+
+    &__ellipse {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background: rgba(247, 250, 111, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto auto 56px auto;
+        position: relative;
+
+        @include respond-to('medium') {
+            margin: 0;
+        }
+
+        &-image {
+            width: 70%;
+        }
+
+        &-ribbon {
+            width: 25%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        &-button{
+            cursor: pointer;
+            position: absolute;
+            bottom: -35px;
+            color: rgba(0, 0, 0, 0.55);
+            font: {
+                size: 21px;
+                family: $font2;
+            }
+        }
+    }
+        
+}
