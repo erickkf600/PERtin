@@ -11,6 +11,7 @@
 <br/>
 
 ## Iniciando o App
+### Necessário ter o node instalado na maquina
 ```bash
 # Clone este repositório
 $ git clone https://github.com/erickkf600/PERtin.git
